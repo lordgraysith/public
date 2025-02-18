@@ -24,13 +24,35 @@ main {
     padding: 40px;
 }
 
-#textInput {
+.input-container {
+    position: relative;
+    display: inline-block;
     width: 80%;
+}
+
+#textInput {
+    width: 100%;
     padding: 15px;
     margin-bottom: 30px;
     border: 2px solid #03a9f4;
     border-radius: 10px;
     font-size: 1.2em;
+    box-sizing: border-box;
+}
+
+.clear-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #03a9f4;
+    display: none;
+}
+
+#textInput:not(:placeholder-shown) + .clear-icon {
+    display: inline;
 }
 
 #canvas {

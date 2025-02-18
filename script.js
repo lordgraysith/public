@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
     const textInput = document.getElementById('textInput');
+    const clearInput = document.getElementById('clearInput');
     const letterImages = {};
 
     // Preload letter images
@@ -37,6 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
+    });
 
+    clearInput.addEventListener('click', () => {
+        textInput.value = '';
+        textInput.dispatchEvent(new Event('input'));
     });
 });
